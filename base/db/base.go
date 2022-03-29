@@ -1,6 +1,8 @@
 package db
 
-import "gorm.io/gorm"
+import (
+	"gorm.io/gorm"
+)
 
 type DBSelector interface {
 	Create() (*gorm.DB, error)
@@ -17,6 +19,7 @@ func New(db DBSelector) *DBBase {
 func (base *DBBase) Connect() (*gorm.DB, error) {
 	res, err := base.DbType.Create()
 	if err != nil {
+		log.Logger.Println(err.Error())
 		return nil, err
 	}
 	return res, nil

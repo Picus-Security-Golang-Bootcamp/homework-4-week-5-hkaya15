@@ -5,20 +5,25 @@ import (
 	"os"
 )
 
-func CreateLogs() (*os.File, *log.Logger, error){
+func CreateLogs() *BuiltinLogger {	
+	result := NewBuiltinLogger()
+	return result
+}
+
+type BuiltinLogger struct {
+	File   *os.File
+	flag   int
+	Logger *log.Logger
+}
+
+func NewBuiltinLogger() *BuiltinLogger {
 	// os.0_APPEND append data to the file when writing.
 	// os.0_CREATE create a new file if none exists.
 	// os.0_WRONLY open the file write-only
-	f,err := os.OpenFile("text.log",os.O_APPEND | os.O_CREATE |os.O_WRONLY,0644)
-	if err!=nil{
-		log.Println(err)
-	}
-	lg:=setLogger(f, "LOGS:",log.LstdFlags)
-	return f,lg,nil
+	f, _ := os.OpenFile("text.log", os.O_APPEND|os.O_CREATE|os.O_WRONLY, 0644)
+	return &BuiltinLogger{
+		File:   f,
+		flag:   log.LstdFlags,
+		Logger: log.New(f, "LOGS: ", log.LstdFlags)}
 }
 
-
-func setLogger(f *os.File,pr string, fl int)*log.Logger{
-	logger:=log.New(f,pr,fl)
-	return logger
-}
