@@ -3,24 +3,30 @@ package db
 import (
 	"fmt"
 	"os"
+	"sync"
 
 	. "github.com/hkaya15/PicusSecurity/Week_5_Homework/base/logs"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
 )
 
-type POSTGRES struct {}
+type POSTGRES struct{}
 
-var log = NewBuiltinLogger()
+var (
+	once  sync.Once
+	conn *gorm.DB
+	log  *BuiltinLogger
+)
 
 func (ps *POSTGRES) Create() (*gorm.DB, error) {
-	res, err := CreatePostgreSQL()
-	
-	if err != nil {
-		log.Logger.Println(err.Error())
-		return nil, err
-	}
-	return res, nil
+	once.Do(func() {
+		res, err := CreatePostgreSQL()
+		conn=res
+		if err != nil {
+			log.Logger.Fatalln(err.Error())
+		}
+	})
+	return conn, nil
 }
 
 func CreatePostgreSQL() (*gorm.DB, error) {
