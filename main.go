@@ -28,4 +28,5 @@ func main() {
 	authorRepo.InsertData()
 	bookRepo.Migrations()
 	bookRepo.InsertData()
+
 }

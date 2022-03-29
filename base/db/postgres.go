@@ -3,6 +3,7 @@ package db
 import (
 	"fmt"
 	"os"
+
 	. "github.com/hkaya15/PicusSecurity/Week_5_Homework/base/logs"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
