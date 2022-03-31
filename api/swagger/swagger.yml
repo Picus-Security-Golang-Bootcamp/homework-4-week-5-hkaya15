@@ -129,7 +129,7 @@ paths:
       produces:
         - "application/json"
       parameters:
-        - name: "bookID"
+        - name: "bookId"
           in: "path"
           description: "Book id to delete"
           required: true
@@ -151,7 +151,7 @@ paths:
           description: Generic error response
           schema:
             $ref: "#/definitions/Error"
-  /book/{bookName}:
+  /book/param?={bookname}:
     get:
       tags:
         - "Book"
@@ -161,7 +161,7 @@ paths:
       produces:
         - "application/json"
       parameters:
-        - name: "bookName"
+        - name: "bookname"
           in: "path"
           description: "Name of book to return"
           required: true
@@ -342,7 +342,7 @@ paths:
           description: Generic error response
           schema:
             $ref: "#/definitions/Error"
-  /author/{authorName}:
+  /author/param?={authorname}:
     get:
       tags:
         - "Author"
@@ -353,7 +353,7 @@ paths:
       produces:
         - "application/json"
       parameters:
-        - name: "authorName"
+        - name: "authorname"
           in: "path"
           description: "Name of author to return"
           required: true
@@ -433,7 +433,9 @@ definitions:
   Book:
     type: object
     required:
-      - description
+      - id
+      - name
+      - authorid
     properties:
       id:
         type: "string"
@@ -464,25 +466,23 @@ definitions:
   Author:
     type: object
     required:
-      - description
+      - id
     properties:
       id:
         type: "integer"
         format: "-"
       name:
         type: "string"
-        format: "string"
   AuthorWithBooks:
     type: object
     required:
-      - description
+      - id
     properties:
       id:
         type: "integer"
         format: "-"
       name:
         type: "string"
-        format: "string"
       book:
         type: "object"
   Error:
