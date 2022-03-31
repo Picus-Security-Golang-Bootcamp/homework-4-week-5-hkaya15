@@ -39,6 +39,38 @@ func (b *BookRepository) InsertData() error {
 	}
 	return nil
 }
+// CreateBook returns the book which created
+func (b *BookRepository) CreateBook(book *Book) (Book,error){
+	result:=b.db.Create(&book)
+	if result.Error != nil {
+		log.Logger.Println(result.Error.Error())
+		return *book, result.Error
+	}
+	return *book, nil
+}
+// UpdateBook returns the updated book
+func (b *BookRepository) UpdateBook(book *Book) (Book, error){
+	result := b.db.Model(&book).Where("book_id = ?", book.BookID)
+	if result.Error != nil {
+		log.Logger.Println(result.Error.Error())
+		return *book, result.Error
+	}
+
+	result.Save(&book)
+	return *book, nil
+}
+
+// GetByID returns an book by id
+func (b *BookRepository) GetByID(id string) (*Book, error) {
+	var book Book
+
+	result := b.db.Where("book_id = ?", id).First(&book)
+	if result.Error != nil {
+		log.Logger.Println(result.Error.Error())
+		return &book, result.Error
+	}
+	return &book, nil
+}
 
 // FindAll returns the book list
 func (b *BookRepository) FindAll() ([]Book, error) {
