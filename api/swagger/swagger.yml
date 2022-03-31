@@ -11,6 +11,8 @@ info:
 tags:
   - name: "Book"
     description: "All operations about the book"
+  - name: "Books"
+    description: "All operations about the books"
   - name: "Author"
     description: "All operations about the author"
   - name: "Authors"
@@ -40,7 +42,7 @@ paths:
         "200":
           description: "successful operation"
           schema:
-              $ref: "#/definitions/ApiResponse"
+              $ref: "#/definitions/ApiResponseBook"
         "405":
           description: "Invalid input"
           schema:
@@ -69,7 +71,7 @@ paths:
         "200":
           description: "Successful operation"
           schema:
-            $ref: "#/definitions/ApiResponse"
+            $ref: "#/definitions/ApiResponseBook"
         "400":
           description: "Invalid ID supplied"
           schema:
@@ -100,13 +102,12 @@ paths:
           in: "path"
           description: "ID of book to return"
           required: true
-          type: "integer"
-          format: "int"
+          type: "string"
       responses:
         "200":
           description: "successful operation"
           schema:
-            $ref: "#/definitions/ApiResponse"
+            $ref: "#/definitions/ApiResponseBook"
         "400":
           description: "Invalid ID supplied"
           schema:
@@ -124,7 +125,7 @@ paths:
         - "Book"
       summary: "Deletes a book"
       description: ""
-      operationId: "deleteBook"
+      operationId: "deleteBookById"
       produces:
         - "application/json"
       parameters:
@@ -132,19 +133,141 @@ paths:
           in: "path"
           description: "Book id to delete"
           required: true
-          type: "integer"
-          format: "int"
+          type: "string"
       responses:
         "200":
           description: "Successful operation"
           schema:
-            $ref: "#/definitions/ApiResponse"
+            $ref: "#/definitions/Error"
         "400":
           description: "Invalid ID supplied"
           schema:
             $ref: "#/definitions/Error"
         "404":
           description: "Book not found"
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /book/{bookName}:
+    get:
+      tags:
+        - "Book"
+      summary: "Find book by name"
+      description: "Returns a single book"
+      operationId: "getBookByName"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "bookName"
+          in: "path"
+          description: "Name of book to return"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponseBookList"
+        "400":
+          description: "Invalid name supplied"
+          schema:
+            $ref: "#/definitions/Error"
+        "404":
+          description: "Book not found"
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /book/buy/{bookId}:
+    get:
+      tags:
+        - "Book"
+      summary: "Buy book by ID"
+      description: "Returns a single book"
+      operationId: "buyBookById"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "bookId"
+          in: "path"
+          description: "ID of book to return"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponseBook"
+        "400":
+          description: "Invalid ID supplied"
+          schema:
+            $ref: "#/definitions/Error"
+        "404":
+          description: "Book not found"
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /bookswithauthor:
+    get:
+      tags:
+          - "Books"
+      summary: "Get books with authors"
+      operationId: "getBooksWithAuthor"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      responses:
+        "200":
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponseBookList"
+        "405":
+          description: "Invalid input"
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /books/{offset}/size/{pagesize}:
+    get:
+      tags:
+          - "Books"
+      summary: "Get books with pagination"
+      operationId: "getBooksWithPagination"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "offset"
+          in: "path"
+          description: "offset of books to return"
+          required: true
+          type: "integer"
+          format: "int"
+        - name: "pagesize"
+          in: "path"
+          description: "pagesize of books to return"
+          required: true
+          type: "integer"
+          format: "int"
+      responses:
+        "200":
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponseBookList"
+        "405":
+          description: "Invalid input"
           schema:
             $ref: "#/definitions/Error"
         default:
@@ -372,7 +495,7 @@ definitions:
         format: "int64"
       message:
         type: "string"
-  ApiResponse:
+  ApiResponseBook:
     type: "object"
     properties:
       code:
@@ -383,6 +506,19 @@ definitions:
       result:
         type: "object"
         $ref: "#/definitions/Book"
+  ApiResponseBookList:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      message:
+        type: "string"
+      result:
+        type: "array"
+        items:
+          type: "object"
+          $ref: "#/definitions/Book"
   ApiResponseAuthor:
     type: "object"
     properties:
