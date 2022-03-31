@@ -1,11 +1,424 @@
-consumes:
-- application/json
-info:
-  title: Swagger
-  version: 0.1.0
-paths: {}
-produces:
-- application/json
-schemes:
-- http
 swagger: "2.0"
+info:
+  description: "This is a sample server Bookstore server."
+  title: "Swagger Bookstore"
+  version: "1.0.0"
+  contact:
+    email: "kayahuseyin15@gmail.com"
+  license:
+    name: "Apache 2.0"
+    url: "http://www.apache.org/licenses/LICENSE-2.0.html"
+tags:
+  - name: "Book"
+    description: "All operations about the book"
+  - name: "Author"
+    description: "All operations about the author"
+  - name: "Authors"
+    description: "All operations about the authors"
+schemes:
+- "http"
+- "https"
+paths:
+  /book:
+    post:
+      tags:
+          - "Book"
+      summary: "Add a new book to the store"
+      operationId: "addBook"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "Book object that needs to be added to the store"
+          required: true
+          schema:
+            $ref: "#/definitions/Book"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+              $ref: "#/definitions/ApiResponse"
+        "405":
+          description: "Invalid input"
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+    put:
+      tags:
+        - "Book"
+      summary: "Update an existing book"
+      operationId: "updateBook"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "Book object that needs to be updated to the store"
+          required: true
+          schema:
+            $ref: "#/definitions/Book"
+      responses:
+        "200":
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        "400":
+          description: "Invalid ID supplied"
+          schema:
+            $ref: "#/definitions/Error"
+        "404":
+          description: "Book not found"
+          schema:
+            $ref: "#/definitions/Error"
+        "405":
+          description: "Validation exception"
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /book/{bookId}:
+    get:
+      tags:
+        - "Book"
+      summary: "Find book by ID"
+      description: "Returns a single book"
+      operationId: "getBookById"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "bookId"
+          in: "path"
+          description: "ID of book to return"
+          required: true
+          type: "integer"
+          format: "int"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        "400":
+          description: "Invalid ID supplied"
+          schema:
+            $ref: "#/definitions/Error"
+        "404":
+          description: "Book not found"
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: generic error response
+          schema:
+            $ref: "#/definitions/Error"
+    delete:
+      tags:
+        - "Book"
+      summary: "Deletes a book"
+      description: ""
+      operationId: "deleteBook"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "bookID"
+          in: "path"
+          description: "Book id to delete"
+          required: true
+          type: "integer"
+          format: "int"
+      responses:
+        "200":
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponse"
+        "400":
+          description: "Invalid ID supplied"
+          schema:
+            $ref: "#/definitions/Error"
+        "404":
+          description: "Book not found"
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /author:
+   put:
+      tags:
+        - "Author"
+      summary: "Update an existing author"
+      operationId: "updateAuthor"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - in: "body"
+          name: "body"
+          description: "Author object that needs to be updated to the store"
+          required: true
+          schema:
+            $ref: "#/definitions/Author"
+      responses:
+        "200":
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponseAuthor"
+        "400":
+          description: "Invalid ID supplied"
+          schema:
+            $ref: "#/definitions/Error"
+        "404":
+          description: "Author not found"
+          schema:
+            $ref: "#/definitions/Error"
+        "405":
+          description: "Validation exception"
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /author/{authorId}:
+    get:
+      tags:
+        - "Author"
+      summary: "Find author by Id"
+      operationId: "getAuthorByID"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "authorId"
+          in: "path"
+          description: "ID of author to return"
+          required: true
+          type: "integer"
+          format: "int"
+      responses:
+        "200":
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponseAuthor"
+        "405":
+          description: "Invalid input"
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /author/{authorName}:
+    get:
+      tags:
+        - "Author"
+      summary: "Find authors by Name"
+      operationId: "getAuthorByName"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      parameters:
+        - name: "authorName"
+          in: "path"
+          description: "Name of author to return"
+          required: true
+          type: "string"
+      responses:
+        "200":
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponseAuthorList"
+        "405":
+          description: "Invalid input"
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /authors:
+    get:
+      tags:
+          - "Authors"
+      summary: "Get all authors"
+      operationId: "getAllAuthors"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      responses:
+        "200":
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponseAuthorList"
+        "405":
+          description: "Invalid input"
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+  /authorswithbooks:
+    get:
+      tags:
+          - "Authors"
+      summary: "Get authors with books"
+      operationId: "getAuthorsWithBook"
+      consumes:
+        - "application/json"
+      produces:
+        - "application/json"
+      responses:
+        "200":
+          description: "Successful operation"
+          schema:
+            $ref: "#/definitions/ApiResponseAuthorsWithBooksList"
+        "405":
+          description: "Invalid input"
+          schema:
+            $ref: "#/definitions/Error"
+        default:
+          description: Generic error response
+          schema:
+            $ref: "#/definitions/Error"
+securityDefinitions:
+  petstore_auth:
+    type: "oauth2"
+    authorizationUrl: "http://petstore.swagger.io/oauth/dialog"
+    flow: "implicit"
+    scopes:
+      write:pets: "modify pets in your account"
+      read:pets: "read your pets"
+  api_key:
+    type: "apiKey"
+    name: "api_key"
+    in: "header"
+definitions:
+  Book:
+    type: object
+    required:
+      - description
+    properties:
+      id:
+        type: "string"
+        format: "string"
+      name:
+        type: "string"
+        format: "string"
+      page:
+        type: "integer"
+        format: "-"
+      stockcount:
+        type: "integer"
+        format: "-"
+      price:
+        type: "number"
+        format: "float"
+      stockid:
+        type: "integer"
+        format: "int"
+      isbn:
+        type: "integer"
+        format: "int"
+      authorid:
+        type: "integer"
+        format: "-"
+      author:
+        type: "object"
+  Author:
+    type: object
+    required:
+      - description
+    properties:
+      id:
+        type: "integer"
+        format: "-"
+      name:
+        type: "string"
+        format: "string"
+  AuthorWithBooks:
+    type: object
+    required:
+      - description
+    properties:
+      id:
+        type: "integer"
+        format: "-"
+      name:
+        type: "string"
+        format: "string"
+      book:
+        type: "object"
+  Error:
+    type: "object"
+    required:
+      - message
+    properties:
+      code:
+        type: "integer"
+        format: "int64"
+      message:
+        type: "string"
+  ApiResponse:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      message:
+        type: "string"
+      result:
+        type: "object"
+        $ref: "#/definitions/Book"
+  ApiResponseAuthor:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      message:
+        type: "string"
+      result:
+        type: "object"
+        $ref: "#/definitions/Author"
+  ApiResponseAuthorList:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      message:
+        type: "string"
+      result:
+        type: "array"
+        items:
+          type: "object"
+          $ref: "#/definitions/Author"
+  ApiResponseAuthorsWithBooksList:
+    type: "object"
+    properties:
+      code:
+        type: "integer"
+        format: "int32"
+      message:
+        type: "string"
+      result:
+        type: "array"
+        items:
+          type: "object"
+          $ref: "#/definitions/AuthorWithBooks"
+ 
+      
