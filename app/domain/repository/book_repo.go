@@ -16,7 +16,6 @@ type BookRepository struct {
 	db *gorm.DB
 }
 
-
 func NewBookRepository(db *gorm.DB) *BookRepository {
 	return &BookRepository{db: db}
 }
@@ -39,17 +38,19 @@ func (b *BookRepository) InsertData() error {
 	}
 	return nil
 }
+
 // CreateBook returns the book which created
-func (b *BookRepository) CreateBook(book *Book) (Book,error){
-	result:=b.db.Create(&book)
+func (b *BookRepository) CreateBook(book *Book) (Book, error) {
+	result := b.db.Create(&book)
 	if result.Error != nil {
 		log.Logger.Println(result.Error.Error())
 		return *book, result.Error
 	}
 	return *book, nil
 }
+
 // UpdateBook returns the updated book
-func (b *BookRepository) UpdateBook(book *Book) (Book, error){
+func (b *BookRepository) UpdateBook(book *Book) (Book, error) {
 	result := b.db.Model(&book).Where("book_id = ?", book.BookID)
 	if result.Error != nil {
 		log.Logger.Println(result.Error.Error())
@@ -145,7 +146,7 @@ func (b *BookRepository) Pagination(offSet int, pageSize int) ([]Book, error) {
 func getAllBooksFromJSON() (*Books, error) {
 	var books Books
 	jsonFile, err := os.Open(os.Getenv("BOOK_JSON"))
-	if err != nil {	
+	if err != nil {
 		log.Logger.Println(err.Error())
 		return nil, err
 	}

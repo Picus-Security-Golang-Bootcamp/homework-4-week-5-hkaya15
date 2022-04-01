@@ -10,3 +10,113 @@ LOGS: 2022/03/31 23:05:17 DB connected:  &{0x1400020c630 <nil> 0 0x1400012c380 1
 LOGS: 2022/03/31 23:06:00 DB connected:  &{0x140002145a0 <nil> 0 0x140000b2380 1}
 LOGS: 2022/03/31 23:07:19 DB connected:  &{0x1400020c5a0 <nil> 0 0x1400012c380 1}
 LOGS: 2022/03/31 23:17:21 DB connected:  &{0x1400020e630 <nil> 0 0x1400012c380 1}
+LOGS: 2022/04/01 01:04:51 DB connected:  &{0x1400020e750 <nil> 0 0x14000136380 1}
+LOGS: 2022/04/01 02:05:09 DB connected:  &{0x14000156e10 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 02:22:11 DB connected:  &{0x14000156d80 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 02:22:24 DB connected:  &{0x1400012cfc0 <nil> 0 0x14000022a80 1}
+LOGS: 2022/04/01 19:22:57 DB connected:  &{0x140000dee10 <nil> 0 0x140000b28c0 1}
+LOGS: 2022/04/01 20:15:45 DB connected:  &{0x14000156cf0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 20:20:02 DB connected:  &{0x140000def30 <nil> 0 0x140000b28c0 1}
+LOGS: 2022/04/01 20:27:05 DB connected:  &{0x14000156e10 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 20:32:47 DB connected:  &{0x14000156ea0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 20:36:14 DB connected:  &{0x14000156d80 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 20:42:21 DB connected:  &{0x14000156d80 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 20:42:23 DB connected:  &{0x14000156d80 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 20:42:48 DB connected:  &{0x14000156d80 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 20:56:16 DB connected:  &{0x14000156ea0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 20:56:37 DB connected:  &{0x14000156cf0 <nil> 0 0x140001248c0 1}
+LOGS: 2022/04/01 21:01:46 DB connected:  &{0x1400012ce10 <nil> 0 0x14000022a80 1}
+LOGS: 2022/04/01 21:11:46 DB connected:  &{0x14000156ea0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 21:11:47 DB connected:  &{0x1400014ed80 <nil> 0 0x140001248c0 1}
+LOGS: 2022/04/01 21:11:49 DB connected:  &{0x140000e6ea0 <nil> 0 0x140000bc8c0 1}
+LOGS: 2022/04/01 21:12:10 DB connected:  &{0x1400012ce10 <nil> 0 0x14000022a80 1}
+LOGS: 2022/04/01 21:12:23 DB connected:  &{0x1400012cd80 <nil> 0 0x14000022a80 1}
+LOGS: 2022/04/01 21:17:06 DB connected:  &{0x14000156d80 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 21:17:17 DB connected:  &{0x1400012cf30 <nil> 0 0x14000022a80 1}
+LOGS: 2022/04/01 21:25:30 DB connected:  &{0x1400012ccf0 <nil> 0 0x14000022a80 1}
+LOGS: 2022/04/01 21:25:49 unsupported data type: 0x140004d1b50: Table not set, please set it like: db.Model(&user) or db.Table("users")
+LOGS: 2022/04/01 22:09:47 DB connected:  &{0x140000defc0 <nil> 0 0x140000b28c0 1}
+LOGS: 2022/04/01 22:09:57 DB connected:  &{0x1400012ce10 <nil> 0 0x14000022a80 1}
+LOGS: 2022/04/01 22:12:03 unsupported data type: 0x140004d1c00: Table not set, please set it like: db.Model(&user) or db.Table("users")
+LOGS: 2022/04/01 22:14:42 DB connected:  &{0x14000156d80 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 22:15:01 unsupported data type: 0x140004524e0: Table not set, please set it like: db.Model(&user) or db.Table("users")
+LOGS: 2022/04/01 22:17:23 unsupported data type: 0x14000452a40: Table not set, please set it like: db.Model(&user) or db.Table("users")
+LOGS: 2022/04/01 22:18:26 DB connected:  &{0x14000156cf0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 22:21:19 DB connected:  &{0x14000156e10 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 22:24:56 DB connected:  &{0x14000156e10 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 22:32:02 DB connected:  &{0x14000156e10 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 22:36:33 DB connected:  &{0x14000156d80 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 22:38:27 DB connected:  &{0x14000156ea0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 22:54:08 DB connected:  &{0x14000156cf0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 22:54:20 DB connected:  &{0x14000134e10 <nil> 0 0x14000022a80 1}
+LOGS: 2022/04/01 23:06:52 DB connected:  &{0x14000156cf0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 23:07:50 DB connected:  &{0x14000156f30 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 23:09:24 DB connected:  &{0x14000156ea0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 23:10:27 DB connected:  &{0x14000156e10 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 23:12:16 DB connected:  &{0x14000156e10 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 23:13:07 DB connected:  &{0x14000156ea0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 23:18:05 DB connected:  &{0x14000156e10 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 23:18:14 DB connected:  &{0x14000134e10 <nil> 0 0x14000022a80 1}
+LOGS: 2022/04/01 23:24:23 DB connected:  &{0x14000156ea0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 23:27:51 DB connected:  &{0x14000156ea0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 23:31:27 DB connected:  &{0x14000156d80 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 23:32:33 DB connected:  &{0x140000decf0 <nil> 0 0x140000b28c0 1}
+LOGS: 2022/04/01 23:32:57 DB connected:  &{0x1400012cd80 <nil> 0 0x14000022a80 1}
+LOGS: 2022/04/01 23:38:26 DB connected:  &{0x14000156e10 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 23:40:28 DB connected:  &{0x1400015ed80 <nil> 0 0x140001348c0 1}
+LOGS: 2022/04/01 23:41:02 DB connected:  &{0x14000156f30 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 23:42:09 DB connected:  &{0x14000156ea0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 23:44:50 DB connected:  &{0x14000156d80 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 23:44:52 record not found
+LOGS: 2022/04/01 23:45:19 record not found
+LOGS: 2022/04/01 23:45:42 DB connected:  &{0x140000decf0 <nil> 0 0x140000b28c0 1}
+LOGS: 2022/04/01 23:45:46 record not found
+LOGS: 2022/04/01 23:46:10 DB connected:  &{0x140000deea0 <nil> 0 0x140000b28c0 1}
+LOGS: 2022/04/01 23:46:17 record not found
+LOGS: 2022/04/01 23:47:44 DB connected:  &{0x14000156cf0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 23:47:59 DB connected:  &{0x1400014ee10 <nil> 0 0x140001248c0 1}
+LOGS: 2022/04/01 23:48:30 record not found
+LOGS: 2022/04/01 23:51:48 DB connected:  &{0x14000156f30 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 23:51:57 record not found
+LOGS: 2022/04/01 23:52:07 record not found
+LOGS: 2022/04/01 23:56:25 DB connected:  &{0x14000156e10 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/01 23:56:40 DB connected:  &{0x1400012ccf0 <nil> 0 0x14000022a80 1}
+LOGS: 2022/04/01 23:56:43 record not found
+LOGS: 2022/04/01 23:56:44 record not found
+LOGS: 2022/04/02 00:07:33 DB connected:  &{0x14000156e10 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/02 00:07:57 record not found
+LOGS: 2022/04/02 00:10:23 DB connected:  &{0x140001d4e10 <nil> 0 0x14000306540 1}
+LOGS: 2022/04/02 00:26:19 DB connected:  &{0x14000156ea0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/02 00:30:18 DB connected:  &{0x14000156d80 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/02 00:30:21 DB connected:  &{0x1400014eea0 <nil> 0 0x140001248c0 1}
+LOGS: 2022/04/02 00:30:23 DB connected:  &{0x140000e6f30 <nil> 0 0x140000bc8c0 1}
+LOGS: 2022/04/02 00:34:52 DB connected:  &{0x14000156d80 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/02 00:34:55 record not found
+LOGS: 2022/04/02 00:35:07 record not found
+LOGS: 2022/04/02 00:40:31 DB connected:  &{0x140000ded80 <nil> 0 0x140000b28c0 1}
+LOGS: 2022/04/02 00:41:25 record not found
+LOGS: 2022/04/02 00:43:41 DB connected:  &{0x14000156cf0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/02 00:43:43 DB connected:  &{0x1400012ce10 <nil> 0 0x14000022a80 1}
+LOGS: 2022/04/02 00:44:50 DB connected:  &{0x14000156ea0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/02 00:45:08 record not found
+LOGS: 2022/04/02 00:45:35 DB connected:  &{0x14000156e10 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/02 00:45:36 DB connected:  &{0x1400012ce10 <nil> 0 0x14000022a80 1}
+LOGS: 2022/04/02 00:45:45 DB connected:  &{0x1400012cd80 <nil> 0 0x14000022a80 1}
+LOGS: 2022/04/02 00:47:38 DB connected:  &{0x14000156d80 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/02 00:47:48 DB connected:  &{0x14000156e10 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/02 00:53:52 DB connected:  &{0x14000156cf0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/02 01:06:39 DB connected:  &{0x14000156cf0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/02 01:26:06 DB connected:  &{0x1400015ed80 <nil> 0 0x140001348c0 1}
+LOGS: 2022/04/02 01:33:54 DB connected:  &{0x14000156e10 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/02 01:38:10 DB connected:  &{0x14000156fc0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/02 01:42:25 DB connected:  &{0x14000156d80 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/02 01:42:33 DB connected:  &{0x1400012ce10 <nil> 0 0x14000022a80 1}
+LOGS: 2022/04/02 02:05:17 DB connected:  &{0x14000156fc0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/02 02:05:22 18446744073709551615 is greater than maximum value for Int8
+LOGS: 2022/04/02 02:19:01 DB connected:  &{0x14000156cf0 <nil> 0 0x1400012c8c0 1}
+LOGS: 2022/04/02 02:19:11 18446744073709551615 is greater than maximum value for Int8
+LOGS: 2022/04/02 02:25:21 record not found
+LOGS: 2022/04/02 02:25:42 record not found
+LOGS: 2022/04/02 02:30:25 DB connected:  &{0x140000dee10 <nil> 0 0x140000b28c0 1}
+LOGS: 2022/04/02 02:44:19 DB connected:  &{0x14000156cf0 <nil> 0 0x1400011c8c0 1}
+LOGS: 2022/04/02 02:44:19 API is running

@@ -433,14 +433,14 @@ definitions:
   Book:
     type: object
     required:
-      - id
-      - name
+      - bookid
+      - bookname
       - authorid
     properties:
-      id:
+      bookid:
         type: "string"
         format: "string"
-      name:
+      bookname:
         type: "string"
         format: "string"
       page:
@@ -487,8 +487,6 @@ definitions:
         type: "object"
   Error:
     type: "object"
-    required:
-      - message
     properties:
       code:
         type: "integer"

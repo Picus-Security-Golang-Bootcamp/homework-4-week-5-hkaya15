@@ -26,16 +26,16 @@ type Book struct {
 	// Required: true
 	Authorid *int64 `json:"authorid"`
 
-	// id
+	// bookid
 	// Required: true
-	ID *string `json:"id"`
+	Bookid *string `json:"bookid"`
+
+	// bookname
+	// Required: true
+	Bookname *string `json:"bookname"`
 
 	// isbn
 	Isbn int64 `json:"isbn,omitempty"`
-
-	// name
-	// Required: true
-	Name *string `json:"name"`
 
 	// page
 	Page int64 `json:"page,omitempty"`
@@ -58,11 +58,11 @@ func (m *Book) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateID(formats); err != nil {
+	if err := m.validateBookid(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateName(formats); err != nil {
+	if err := m.validateBookname(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -81,18 +81,18 @@ func (m *Book) validateAuthorid(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *Book) validateID(formats strfmt.Registry) error {
+func (m *Book) validateBookid(formats strfmt.Registry) error {
 
-	if err := validate.Required("id", "body", m.ID); err != nil {
+	if err := validate.Required("bookid", "body", m.Bookid); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *Book) validateName(formats strfmt.Registry) error {
+func (m *Book) validateBookname(formats strfmt.Registry) error {
 
-	if err := validate.Required("name", "body", m.Name); err != nil {
+	if err := validate.Required("bookname", "body", m.Bookname); err != nil {
 		return err
 	}
 
