@@ -1,3 +1,14 @@
-## Homework | Week 5
+# Week 5 | Week 
 
-- Homework-3-Week-4 ödevinin ResutAPI olarak güncellenecektir.
+This work is the fifth week of the [Picus Security](https://www.picussecurity.com) Golang Backend Web Development Bootcamp
+
+## Installation
+```bash
+git clone https://github.com/Picus-Security-Golang-Bootcamp/homework-4-week-5-hkaya15.git
+```
+## Swagger
+
+<img src="img/swagger.png"/>
+
+## License
+[MIT](https://mit-license.org)
